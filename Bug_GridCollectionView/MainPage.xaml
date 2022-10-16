@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bug_GridCollectionView.MainPage"
+             x:Name="this">
+
+    <!--
+        remove one of the following codes will fix the fail:
+        - VerticalOptions="Center"
+        - ItemsLayout="HorizontalGrid"
+    -->
+    <Grid VerticalOptions="Center">
+        <CollectionView ItemsLayout="HorizontalGrid" ItemsSource="{Binding Somethinguseless, Source={Reference this}}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+
+</ContentPage>
